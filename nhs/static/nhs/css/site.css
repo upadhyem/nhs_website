@@ -2,6 +2,56 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 34px;
     text-transform: uppercase;
-    color: #48382d;
+    /*color: #48382d; Dark blue background color*/
+    color: #923b3b; /* Maroon background color*/ 
     text-shadow: 1px 1px 1px #f6f5f3;
+    vertical-align: top;
+    text-align: center;
+    padding-right: 80px;
+}
+
+
+ 
+ body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #48382d;
+    background: url(/static/images/footer-bg-blue.jpg) repeat;
+ }
+ 
+#logo-wrap {
+    background: /*#fbfaf9*/#556c8b  url(/static/images/logo-bg-blue.gif) repeat-x bottom;
+}
+
+#nav-wrap {
+    background: url(/static/images/nav-bg-blue.jpg) repeat-x top;
+    height: 55px;
+}
+
+#logo-wrap .container {
+    background: url(/static/images/nhsLogo.png) no-repeat center right;
+    min-height: 65px;
+    padding-top: 40px;
+}
+
+/*#copy-wrap .footer{
+    background: url(/static/images/nav-bg-blue.jpg) repeat-x bottom;
+    border-bottom: 5px solid #556c8b;
+    height: 55px;
+}*/
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background: url(/static/images/nav-bg-blue.jpg) repeat-x bottom;
+    border-bottom: 10px solid #556c8b;
+    height: 55px;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
 }
