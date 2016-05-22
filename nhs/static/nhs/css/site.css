@@ -8,6 +8,11 @@
     vertical-align: top;
     text-align: center;
     padding-right: 80px;
+    
+}
+header{
+    background: /*#fbfaf9*/#556c8b  url(/static/images/logo-bg-blue.gif) repeat-x bottom;
+    
 }
 
 
@@ -19,9 +24,7 @@
     background: url(/static/images/footer-bg-blue.jpg) repeat;
  }
  
-#logo-wrap {
-    background: /*#fbfaf9*/#556c8b  url(/static/images/logo-bg-blue.gif) repeat-x bottom;
-}
+
 
 #nav-wrap {
     background: url(/static/images/nav-bg-blue.jpg) repeat-x top;
@@ -34,7 +37,7 @@
     padding-top: 40px;
 }
 
-/*#copy-wrap .footer{
+/*footer div{
     background: url(/static/images/nav-bg-blue.jpg) repeat-x bottom;
     border-bottom: 5px solid #556c8b;
     height: 55px;
