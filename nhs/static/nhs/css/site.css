@@ -8,8 +8,10 @@
     vertical-align: top;
     text-align: center;
     padding-right: 80px;
+    padding-top: 30px;
     
 }
+
 header{
     background: /*#fbfaf9*/#556c8b  url(/static/images/logo-bg-blue.gif) repeat-x bottom;
     
@@ -28,7 +30,7 @@ header{
 
 #nav-wrap {
     background: url(/static/images/nav-bg-blue.jpg) repeat-x top;
-    height: 55px;
+    
 }
 
 #logo-wrap .container {
@@ -43,17 +45,20 @@ header{
     height: 55px;
 }*/
 
+#content {
+    background-color: white;
+    min-height: 300px;
+}
+
 #footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    
     padding: 1rem;
     background: url(/static/images/nav-bg-blue.jpg) repeat-x bottom;
     border-bottom: 10px solid #556c8b;
     height: 55px;
     text-align: center;
 }
+
 
 .container {
     margin: 0 auto;
