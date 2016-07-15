@@ -1,0 +1,12 @@
+{% extends 'events/base_site.html' %}
+
+{% block content %}
+    <h2 class="title">{{event.name}}</h2>
+    <div class="card">
+        <div class="card-content">
+            <p class="center-align"><i>{{event.name}}</i></p>
+            <hr>
+            {{event.description | safe}}
+        </div>
+    </div>
+{% endblock %}

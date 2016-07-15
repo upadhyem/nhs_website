@@ -29,7 +29,7 @@
                     
                     <div class="container" id="nav-container">
                         <ul class="nav nav-justified">
-                            <li class="active"><a href="#">Events</a></li>
+                            <li class="active"><a href="{% url 'index' %}">Events</a></li>
                             <li><a href="#">Your Events</a></li>
                             <li><a href="#">Create An Event</a></li>
                             <li><a href="#">About</a></li>
@@ -58,23 +58,11 @@
             </div>
             
         </div>
-        
-        <div class="row" id="content">
-            <div class="col-xs-12">
-                <div class="panel panel-info">
-                      <div class="panel-heading"><a href="">Event Name</a></div>
-                      <div class="panel-body">
-                        Event details
-                      </div>
-                </div>
-                <div class="panel panel-info">
-                      <div class="panel-heading"><a href="">Event Name</a></div>
-                      <div class="panel-body">
-                        Event details
-                      </div>
-                </div>
+        <div class="row">
+            <div  id="content">
+                {% block content %}
+                {% endblock %}
             </div>
-            
         </div>
         
         <div class="row">
