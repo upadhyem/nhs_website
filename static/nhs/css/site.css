@@ -17,9 +17,15 @@ header{
     
 }
 
+#events-title {
+    font-family: "Verdana", sans-serif;
+    font-size 28px;
+    text-shadow: 1px 1px 1px #f6f5f3;
+    text-align: center;
+}
 
- 
- body {
+
+body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
     color: #48382d;
@@ -34,10 +40,14 @@ header{
     
 }
 
-#logo-wrap .container {
-    background: url(/static/images/nhsLogo.png) no-repeat center right;
-    min-height: 65px;
-    padding-top: 40px;
+#OPS-logo-wrap  {
+    top: 14px;
+    padding-left: 30px;
+}
+
+#NHS-logo-wrap  {
+    padding-top: 10px;
+    padding-right: 30px;
 }
 
 #nav-container  {

@@ -1,0 +1,29 @@
+{% extends 'events/base_site.html' %}
+
+{% block content %}
+<div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                          <div class="row">
+                                <div class="col-xs-12 col-sm-11">
+                                  <h4>{{event.name}}</h4>
+                                </div>
+                                <div class="col-xs-12 col-sm-1">
+                                    <form method="POST" action="{% url 'events:attending' %}">{% csrf_token %}
+                                        <button class="btn btn-default">Join</button>
+                                    </form>
+                                </div>
+                          </div>
+                    </div>
+                      <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">{{event.description}}</li>
+                            <li class="list-group-item"><b>Location:</b> {{event.location}}</li>
+                            <li class="list-group-item"><b>Start:</b> {{event.start}}<hr><b>End:</b> {{event.end}}</li>
+                            <li class="list-group-item"><b>Contact Name:</b> {{event.contact_name}}<hr><b>Contact Information:</b> {{event.contact_info}}</li>
+                        </ul>
+                      </div>
+                </div>
+    </div>
+</div>  
+{% endblock %}

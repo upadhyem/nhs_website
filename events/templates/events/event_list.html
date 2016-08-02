@@ -1,9 +1,11 @@
 {% extends "events/base_site.html" %}
 
 {% block content %}
-<h2>Events</h2>
+<div id='events-title'>
+    <h3>Events</h3>
+</div>
     {% for event in object_list %}
-        <div class="col-xs-6">
+        <div class="col-xs-4">
                 <div class="panel panel-info">
                       <div class="panel-heading"><a href="{% url 'events:detail' event.id %}">{{event.name}}</a></div>
                       <div class="panel-body">
