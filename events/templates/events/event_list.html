@@ -1,14 +1,26 @@
 {% extends "events/base_site.html" %}
 
 {% block content %}
-<div id='events-title'>
-    <h3>Events</h3>
+<div class="row">
+    <div class="col-xs-2">
+    </div>
+    
+    <div class="col-xs-8 text-center" id="events-title">
+        <h3>Events</h3>
+    </div>
+    <div class="col-xs-2" style="top: 15px;">
+        <h4>Planned Hours: {{hours}}</h4>
+    </div>
+    
 </div>
+
+
+
     {% for event in object_list %}
         <div class="col-xs-4">
                 <div class="panel panel-info">
-                      <div class="panel-heading"><a href="{% url 'events:detail' event.id %}">{{event.name}}</a></div>
-                      <div class="panel-body">
+                      <div class="panel-heading"><a href="{% url 'events:detail' event.id %}"><b>{{event.name}}</b></a><span class="pull-right">({{event.hours}} hr)</span></div>
+                      <div class="panel-body" style="max-height:50px; overflow-y: hidden;">
                         {{event.description}}
                       </div>
                 </div>

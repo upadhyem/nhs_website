@@ -10,7 +10,14 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-1">
                                     <form method="POST" action="{% url 'events:attending' %}">{% csrf_token %}
-                                        <button class="btn btn-default">Join</button>
+                                        <input type="hidden" name="user_id" value="{{user.id|default_if_none:""}}">
+                                        <input type="hidden" name="event_id" value="{{event.id}}">
+                                        {% if not user.is_authenticated or not user in event.attendees.all %}
+                                          <input type="submit" value="Join" class="btn btn-info" name="action">
+                                        {% else %}
+                                          <input type="submit" value="Leave" class="btn btn-info" name="action">
+                                        {% endif %}
+                                        
                                     </form>
                                 </div>
                           </div>
@@ -19,7 +26,7 @@
                         <ul class="list-group">
                             <li class="list-group-item">{{event.description}}</li>
                             <li class="list-group-item"><b>Location:</b> {{event.location}}</li>
-                            <li class="list-group-item"><b>Start:</b> {{event.start}}<hr><b>End:</b> {{event.end}}</li>
+                            <li class="list-group-item"><b>Start:</b> {{event.start}}<hr><b>End:</b> {{event.end}} <b>Hours: </b> {{event.hours}}</li>
                             <li class="list-group-item"><b>Contact Name:</b> {{event.contact_name}}<hr><b>Contact Information:</b> {{event.contact_info}}</li>
                         </ul>
                       </div>
@@ -27,3 +34,15 @@
     </div>
 </div>  
 {% endblock %}
+
+
+<!--                                        <div id="myModal" class="modal fade" role="dialog">
+                                          <div class="modal-dialog">
+                                            <!-- Modal content
+                                            <div class="modal-content" >
+                                              <div class="modal-body" id="modal">
+                                                <b>Event Joined!</b>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>-->

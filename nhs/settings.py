@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'events',
+    'registration'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -49,7 +51,13 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 ROOT_URLCONF = 'nhs.urls'
 
@@ -60,6 +68,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -125,3 +135,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/nhs'),
 )
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '817865598858-valsed4g6ddpdjrhmfursvcpeu4rh639.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'PzXC68yRov006_OmCZpsDuyx'

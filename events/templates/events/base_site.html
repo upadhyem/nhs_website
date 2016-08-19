@@ -22,15 +22,16 @@
             
         </header>
         <div class="row">
-            <div class="col-xs-1" id="nav-wrap">
+            <div class="col-xs-2" id="nav-wrap">
                 
             </div>
-            <div id="nav-wrap" class="col-xs-10">
+            <div id="nav-wrap" class="col-xs-8">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="container" id="nav-container">
                         <ul class="nav nav-justified">
+                            <li><span><a href="{% url 'social:begin' backend='google-oauth2' %}?next={{ request.build_absolute_uri }}{{ object.get_absolute_url }}" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i>Sign in with Google</a></span></li>
                             <li class="active"><a href="{% url 'index' %}"><b>Events</b></a></li>
-                            <li><a href="#"><b>Your Events</b></a></li>
+                            <li><a href="{% url 'events:your_events' %}"><b>Your Events</b></a></li>
                             <li><a href="#"><b>Create An Event</b></a></li>
                             <li><a href="#"><b>About</b></a></li>
                             <li><a href="#"><b>Contact</b></a></li>
@@ -39,19 +40,28 @@
                 </div><!-- /.navbar-collapse -->
             </div>
             
-            <div class="col-xs-1" id="nav-wrap">
+            <div class="col-xs-2" id="nav-wrap">
                 <ul class="nav navbar-nav navbar-right" >
-                     
-                      <li class="dropdown">
-                        <li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 4px; margin-right:20px;"><span class="glyphicon glyphicon-user"></span> My Account<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                              <li><a href="#">My Hours</a></li>
-                              <li role="separator" class="divider"></li>
-                              <li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
-                            </ul>
+                    {% if user.is_authenticated %}
+                        <li class="dropdown">
+                            <li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: 4px; margin-right:20px;"><span class="glyphicon glyphicon-user"></span> My Account<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">My Hours</a></li>
+                                  <li role="separator" class="divider"></li>
+                                  {% if user.is_staff %}
+                                  <li><a href="https://nhs-colem213.c9users.io/admin">Admin</a></li>
+                                  <li role="separator" class="divider"></li>
+                                  {% endif %}
+                                  <li><a href="https://nhs-colem213.c9users.io/accounts/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                                </ul>
+                            </li>
                         </li>
-                      </li>
-                    </ul>
+                    {% else %}
+                        <li><a class="btn btn-default" href="https://nhs-colem213.c9users.io/accounts/login"><span class="glyphicon glyphicon-off"></span> Login</a></li>
+                    {% endif %}
+                </ul>
+
+                
             </div>
             
         </div>

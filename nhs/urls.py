@@ -24,5 +24,7 @@ from events import views
 urlpatterns = [
     url(r'^$', views.EventListView.as_view(), name='index'),
     url(r'^events/', include('events.urls')),
-    url(r'^admin/', admin.site.urls)
+    url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url('', include('social.apps.django_app.urls', namespace='social')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

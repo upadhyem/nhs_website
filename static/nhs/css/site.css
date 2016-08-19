@@ -18,7 +18,7 @@ header{
 }
 
 #events-title {
-    font-family: "Verdana", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size 28px;
     text-shadow: 1px 1px 1px #f6f5f3;
     text-align: center;
@@ -54,6 +54,22 @@ body {
     padding-top: 10px;
 }
 
+#modal {
+    font-family: Arial, sans-serif;
+    color: green;
+    text-align: center;
+    background-color:#dff0d8;
+    
+}
+
+.panel-info > .panel-heading {
+    background-color: #d7e6fa;
+}
+
+.btn-info {
+    background-color: #33b7b2;
+}
+
 #nav-container li {
     font-family: Arial;
     text-transform: uppercase;
@@ -67,7 +83,7 @@ body {
 
 #content {
     padding-top: 10px;
-    background-color: white;
+    background-color: #fdf7ef;
     min-height: 500px;
 }
 
