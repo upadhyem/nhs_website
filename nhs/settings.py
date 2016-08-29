@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'events',
-    'registration'
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -136,5 +136,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/nhs'),
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '817865598858-valsed4g6ddpdjrhmfursvcpeu4rh639.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'PzXC68yRov006_OmCZpsDuyx'
+LOGIN_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '817865598858-eiqmdjfqqm1if5q2npjrict7a4f9ojh1.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'gpB44n3FWKzkOBwB76QryGSF'

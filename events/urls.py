@@ -6,6 +6,7 @@ app_name='events'
 urlpatterns = [
     url(r'^$', EventListView.as_view(), name='list'),
     url(r'^your_events$', YourEventsListView.as_view(), name='your_events'),
+    url(r'^about$', about, name='about'),
     url(r'^attending$', attending, name='attending'),
     url(r'^(?P<pk>\d+)/$', EventDetailView.as_view(), name="detail")
 ]

@@ -66,6 +66,8 @@ class YourEventsListView(ListView):
         for e in self.get_queryset():
             hours += e.hours()
         context['hours'] = round(hours * 2) / 2.0
+        context['planned_hours'] = True
         return context
     
-    
+def about(request):
+    return render(request, 'events/about.html', {})

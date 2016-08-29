@@ -32,8 +32,7 @@
                             <li><span><a href="{% url 'social:begin' backend='google-oauth2' %}?next={{ request.build_absolute_uri }}{{ object.get_absolute_url }}" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i>Sign in with Google</a></span></li>
                             <li class="active"><a href="{% url 'index' %}"><b>Events</b></a></li>
                             <li><a href="{% url 'events:your_events' %}"><b>Your Events</b></a></li>
-                            <li><a href="#"><b>Create An Event</b></a></li>
-                            <li><a href="#"><b>About</b></a></li>
+                            <li><a href="{% url 'events:about' %}"><b>About</b></a></li>
                             <li><a href="#"><b>Contact</b></a></li>
                         </ul>
                     </div>

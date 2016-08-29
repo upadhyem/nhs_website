@@ -1,0 +1,21 @@
+{% extends "events/base_site.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading text-center" id="nav-container">
+            <h3><b>General Information</b></h3>
+        </div>
+        <div class="panel-body" id="event">
+            <p><b>The National Honor Society</b> is a nation-wide community service program designed for high school students. The Okemos chapter is set up to provide Okemos High School Juniors and Seniors with service opportunities that will improve the school and the community and, hopefully, the student as well. Members of N.H.S. are selected based on four criteria: scholarship, character, leadership and service.</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <h3><b>Characterisitcs of an Okemos High School NHS Member</b></h3>
+    </div>
+    <div>
+        <img class="center-block" src="{% static "images/nhsAbout.jpg" %}"> 
+    </div>
+</div>
+{% endblock %}
